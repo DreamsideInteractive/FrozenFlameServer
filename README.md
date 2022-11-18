@@ -32,11 +32,31 @@ Use the next example to install the game server on Linux:
 ```
 *Thanks to Chester for community support.*
 
+## Example Install and launch files
+
+### Install/Update - Create a .bat  or .sh file with the following contents to install the dedicated server. 
+
+`
+"path\to\steamcmd.exe" +force_install_dir "path\to\install\DedicatedServer" +login anonymous +app_update 1348640 validate +quit
+`
+
+### Launcher -Create a .bat  or .sh file with the following contents to launch you server. 
+
+`
+"path\to\FrozenFlameServer.exe" -log -LOCALLOGTIMES -MetaGameServerName="YOURSERVERNAME" -ip=xxx.xxx.xxx.xxx -Port=YOURPORT -queryPort=YOURPORT -RconPort=YOURPORT -RconPassword=YOURPASSWORD 
+`
+
 # Command line arguments
 
 `-log` - Shows a server console
 
 `-LOCALLOGTIMES` - Use a local timezone 
+
+`-port` - Sets custom Game port. This is used by client to connect
+
+`-queryPort` - Sets custom Query Port. Used by Steam to get server info 
+
+`-ip` - Sets your public IP 
 
 `-MetaGameServerName=CoolServer` - Set server name
 
@@ -162,3 +182,6 @@ Default ports list:
 7777/udp
 7777
 ```
+### Server Crashes after Tutorial
+
+If you are crashing after the tutorial, install the standard [Steam Client](https://store.steampowered.com/about/) on the server you are hosting from. You simply need to install it and let it update. Once complete you can close it. 
