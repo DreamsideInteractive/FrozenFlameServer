@@ -30,6 +30,7 @@ Use the next example to install the game server on Linux:
 8.    app_update 1348640 validate
 9.    quit
 ```
+*Thanks to Chester for community support.*
 
 # Command line arguments
 
