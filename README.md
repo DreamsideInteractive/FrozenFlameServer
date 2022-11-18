@@ -2,16 +2,20 @@
 
 You will need a static (public) IP address, so people will be able to connect to your server.
 
-AppID for SteamCMD: `1348640`
+#  Installation via SteamCMD
 
-##  Installation via Steam Client
+You can use [SteamCmd](https://developer.valvesoftware.com/wiki/SteamCMD) tool to download a server.
+
+Use the next AppID `1348640`
+
+#  Installation via Steam Client
 First, you need to find `Frozen Flame - Dedicated server` in your Steam library. 
 
 Install it, open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log` command line argument. 
 After that a game console will be shown. You can try to add it to your game private servers list with `127.0.0.1` IP by default (for local tests).
 
-## Installation via Linux
-Install SteamCMD:
+# Installation via Linux
+Use the next example to install the game server on Linux:
 ```
 1.    adduser steam
 2.    passwd steam
@@ -25,17 +29,23 @@ Install SteamCMD:
 9.    quit
 ```
 
-## Comman line arguments
+# Comman line arguments
 
 `-log` - Shows a server console
+
 `-LOCALLOGTIMES` - Use a local timezone 
+
 `-MetaGameServerName=CoolServer` - Set server name
+
 `RconPassword=password` - Set Rcon password
+
 `RconPort=` - Set Rcon port
 
-## Configuration file
-To configuration a server you should create a `Game.ini` filt at
+# Configuration file
+Create a `Game.ini` file at:
+
 For Windows: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer` folder.
+
 For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` folder.
 
 Here is an example of `Game.ini` server config file:
@@ -122,11 +132,11 @@ bInvulnerableModules=False
 MinDurability=0.300000
 ```
 
-## RCON
+# RCON
 
 COMING SOON
 
-## F.A.Q.
+# F.A.Q.
 
 ### Disconnecting from server after 20-30s
 Make sure that your server supports `EasyAntiCheat` and players using it as well.
