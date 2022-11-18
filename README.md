@@ -2,13 +2,12 @@
 
 You will need a static (public) IP address, so people will be able to connect to your server.
 
-### You will also need to open next ports:
+Required network ports (by default):
 !!!!!
 
-### Recommended system requirements:
+Recommended system requirements:
 !!!!
 
-№## Download
 AppID for SteamCMD: `1348640`
 
 ##  Installation via Steam Client
@@ -97,10 +96,6 @@ bEnableCheats=True
 
 COMING SOON
 
-## Save files
-The default location for save files are:
-`Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames`
-
 ## F.A.Q.
 
 ### Disconnecting from server after 20-30s
@@ -108,3 +103,7 @@ Make sure that your server supports `EasyAntiCheat` and players using it as well
 It should be in the end og server log right after start `LogEOSAnalytics: Start Session (User: ...)`
 
 If for some reason it doesn't work - players can play on your dedicated server only without EasyAntiCheat (a second option on Steam game start).
+
+### Where to find game saves
+The default location for save files are:
+`Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames`
