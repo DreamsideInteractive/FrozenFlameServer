@@ -5,9 +5,10 @@ You will need a static (public) IP address, so people will be able to connect to
 AppID for SteamCMD: `1348640`
 
 ##  Installation via Steam Client
-First, you need to find "Frozen Flame - Dedicated server in your Steam library. 
+First, you need to find `Frozen Flame - Dedicated server` in your Steam library. 
 
-Find `FrozenFlameServer.exe` and start it with `-log` command line argument. After that a game console will be shown.
+Install it, open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log` command line argument. 
+After that a game console will be shown. You can try to add it to your game private servers list with `127.0.0.1` IP by default (for local tests).
 
 ## Installation via Linux
 Install SteamCMD:
