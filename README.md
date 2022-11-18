@@ -42,8 +42,8 @@ Here is an example of `Game.ini` server config file:
 
 ```
 [/Script/Engine.GameSession]
-;MaxPlayers=10
-;ServerPassword=""
+MaxPlayers=10
+ServerPassword=""
 
 [/Script/FrozenFlame.GameBalance]
 
