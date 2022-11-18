@@ -41,55 +41,85 @@ For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` f
 Here is an example of config file:
 
 ```
-[/Script/FrozenFlame.GameBalance]
-#Enable PVP
-bFreePVP=False
+[/Script/Engine.GameSession]
+;MaxPlayers=10
+;ServerPassword=""
 
-#How long a day lasts
+[/Script/FrozenFlame.GameBalance]
+
+# Enable PVP for non-friends
+bFreePVP=True
+
+# How long a day lasts
 DurationOfDay=3600
 
-#Stamina cost at jumping
-JumpStaminaCost=4
 
-#Stamina cost at sprinting
-SprintStaminaCost=3
+# Health after death
+HealthAfterRespawn=0.5
 
-#Stamina cost at swimming
-SwimStaminaCost=0
+# Restore health on level up
+bRestoreHealthOnLevelUp=True
 
-#Multiplycator of weight max
-InventoryLimitOverweightFactor=5
+# Stamina cost at jumping
+JumpStaminaCost=6
 
-#Drop of items after level X
-MinimalLevelofDropItemAfterDeath=1
+# Stamina cost at sprinting
+SprintStaminaCost=1
 
-#Drop equipped items on death
-bDropEquippedItems=True
-#Drop equipable items on death
-bDropEquipableItems=True
-#Drop food on death
-bDropFoodItems=True
+# Loss of armor durability after death
+ArmorDurabilityReducementAfterDeath=25
 
-#lose on durability on death
-ArmorDurabilityReducementAfterDeath=0
+# Weapon durability loss speed
+DefaultWeaponDurabilityCost=0.5
 
-#Health after death
-HealthAfterRespawn=1.0
+
+# Allow to teleport with overweight
+bIsAllowedToTeleportWithOverweight=False
+
+# Allow to fly with overweight
+bIsAllowedToGlideWithOverweight=False
+
+
+# Drop of items after level X
+MinimalLevelToDropItemAfterDeath=2147483647
+
+# Drop equipped items after death
+bDropEquippedItems=False
+
+# Drop equipable items after death
+bDropEquipableItems=False
+
+# Drop food on death
+bDropFoodItems=False
+
+
+#Flame rate from everything
+FlameRate=1
+
+#Player damage multiplier
+PlayerDamageMultiplier=1
+
+#Monsters health multiplier
+MonstersHealthMultiplier=1
+
+#Monsters damage multiplier
+MonstersDamageMultiplier=1
+
+
 
 #Bulding without material costs
-bNoModuleCost=True
+bNoModuleCost=False
 
 #Building without restrictions
-bLimitlessSupport=True
+bLimitlessSupport=False
 
 #Bulding without decay
-bInvulnerableModules=True
+bInvulnerableModules=False
 
-#Unlock all recipes
-bUnlockAllRecipes=True
 
-[/Script/FrozenFlame.FGameMode]
-bEnableCheats=True
+[/Script/FrozenFlame.DecaySubsystemSettings]
+#A minimum durability that keeps after weather decay system damage
+MinDurability=0.300000
 ```
 
 ## RCON
