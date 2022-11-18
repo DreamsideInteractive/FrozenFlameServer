@@ -14,6 +14,7 @@ Open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log`
 After that a game console will be shown. You can try to add it to your game private servers list with `127.0.0.1` IP by default (for local tests).
 
 You can temporary download Windows Dedicated server version here https://www.dropbox.com/s/s83d2ix6ebil762/FrozenFlameServer_0.65.0.3.30843.zip?dl=0
+
 But make sure it will be updated after new game patches (otherwise it will be not possible to connect).
 
 # Installation on Linux
