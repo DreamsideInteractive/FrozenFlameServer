@@ -2,12 +2,6 @@
 
 You will need a static (public) IP address, so people will be able to connect to your server.
 
-Required network ports (by default):
-!!!!!
-
-Recommended system requirements:
-!!!!
-
 AppID for SteamCMD: `1348640`
 
 ##  Installation via Steam Client
@@ -34,9 +28,14 @@ Install SteamCMD:
 
 `-log` - Shows a server console
 `-LOCALLOGTIMES` - Use a local timezone 
+`-MetaGameServerName=CoolServer` - Set server name
+`RconPassword=password` - Set Rcon password
+`RconPort=` - Set Rcon port
 
 ## Configuration file
-To configuration a server you should create a `Game.ini` filt at `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer` folder.
+To configuration a server you should create a `Game.ini` filt at
+For Windows: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer` folder.
+For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` folder.
 
 Here is an example of config file:
 
@@ -104,6 +103,16 @@ It should be in the end og server log right after start `LogEOSAnalytics: Start 
 
 If for some reason it doesn't work - players can play on your dedicated server only without EasyAntiCheat (a second option on Steam game start).
 
-### Where to find game saves
+### Where to find the game save files?
 The default location for save files are:
 `Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames`
+
+### Which ports might be required?
+Default ports list:
+```
+25575
+27015/udp
+27015
+7777/udp
+7777
+```
