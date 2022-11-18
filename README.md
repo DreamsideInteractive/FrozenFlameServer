@@ -8,13 +8,7 @@ You can use [SteamCmd](https://developer.valvesoftware.com/wiki/SteamCMD) tool t
 
 Use the next AppID `1348640`
 
-#  Download for Windows
-
-Please download the archive from GitHub and unpack it.
-
-You can also try to find `Frozen Flame - Dedicated server` in your Steam library (should be available soon).
-
-# Installation on Windows
+# Running on Windows
 
 Open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log` command line argument. 
 After that a game console will be shown. You can try to add it to your game private servers list with `127.0.0.1` IP by default (for local tests).
