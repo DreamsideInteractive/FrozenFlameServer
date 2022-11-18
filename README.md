@@ -29,7 +29,7 @@ Use the next example to install the game server on Linux:
 9.    quit
 ```
 
-# Comman line arguments
+# Command line arguments
 
 `-log` - Shows a server console
 
