@@ -8,13 +8,18 @@ You can use [SteamCmd](https://developer.valvesoftware.com/wiki/SteamCMD) tool t
 
 Use the next AppID `1348640`
 
-#  Installation via Steam Client
-First, you need to find `Frozen Flame - Dedicated server` in your Steam library. 
+#  Download for Windows
 
-Install it, open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log` command line argument. 
+Please download the archive from GitHub and unpack it.
+
+You can also try to find `Frozen Flame - Dedicated server` in your Steam library (should be available soon).
+
+# Installation on Windows
+
+Open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log` command line argument. 
 After that a game console will be shown. You can try to add it to your game private servers list with `127.0.0.1` IP by default (for local tests).
 
-# Installation via Linux
+# Installation on Linux
 Use the next example to install the game server on Linux:
 ```
 1.    adduser steam
