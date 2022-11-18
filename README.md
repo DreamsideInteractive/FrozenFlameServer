@@ -2,11 +2,14 @@
 
 You will need a static (public) IP address, so people will be able to connect to your server.
 
-You will also need to open next ports:
+### You will also need to open next ports:
 !!!!!
 
-Recommended system requirements:
+### Recommended system requirements:
+!!!!
 
+№## Download
+AppID for SteamCMD: `1348640`
 
 ##  Installation via Steam Client
 First, you need to find "Frozen Flame - Dedicated server in your Steam library. 
@@ -27,6 +30,11 @@ Install SteamCMD:
 8.    app_update 1348640 validate
 9.    quit
 ```
+
+## Comman line arguments
+
+`-log` - Shows a server console
+`-LOCALLOGTIMES` - Use a local timezone 
 
 ## Configuration file
 To configuration a server you should create a `Game.ini` filt at `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer` folder.
@@ -85,13 +93,17 @@ bUnlockAllRecipes=True
 bEnableCheats=True
 ```
 
-## Server commands
+## RCON
 
 COMING SOON
 
-## ISSUES
+## Save files
+The default location for save files are:
+`Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames`
 
-# Disconnecting from server after 20-30s
+## F.A.Q.
+
+### Disconnecting from server after 20-30s
 Make sure that your server supports `EasyAntiCheat` and players using it as well.
 It should be in the end og server log right after start `LogEOSAnalytics: Start Session (User: ...)`
 
