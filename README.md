@@ -38,7 +38,7 @@ To configuration a server you should create a `Game.ini` filt at
 For Windows: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer` folder.
 For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` folder.
 
-Here is an example of config file:
+Here is an example of `Game.ini` server config file:
 
 ```
 [/Script/Engine.GameSession]
