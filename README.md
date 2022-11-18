@@ -21,8 +21,7 @@ Use the next example to install the game server on Linux:
 2.    passwd steam
 3.    dnf install glibc.i686 libstdc++.i686 tmux screen -y
 4.    su - steam
-5.    curl -sqL "[https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz](https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz)
-" | tar zxvf -
+5.    curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
 6.    force_install_dir ./frozen_flame/
 7.    login anonymous
 8.    app_update 1348640 validate
