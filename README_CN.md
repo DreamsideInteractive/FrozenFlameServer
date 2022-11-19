@@ -44,11 +44,11 @@
 
 ## 指令参数
 
-`-log` - 显示游戏控制台
-`-LOCALLOGTIMES` - 使用本机系统时间
-`-MetaGameServerName=CoolServer` - 设置服务器名字为 `CoolServer`
-`RconPassword=password` - 设置 Rcon 密码为 `password`
-`RconPort=` - 设置 Rcon 接口
+- `-log` - 显示游戏控制台
+- `-LOCALLOGTIMES` - 使用本机系统时间
+- `-MetaGameServerName=CoolServer` - 设置服务器名字为 `CoolServer`
+- `RconPassword=password` - 设置 Rcon 密码为 `password`
+- `RconPort=` - 设置 Rcon 接口
 
 ## 配置文件
 
