@@ -1,3 +1,5 @@
+[阅读中文版教程](./README_CN.md)
+
 # Frozen Flame - Dedicated Server
 
 You will need a static (public) IP address, so people will be able to connect to your server.
