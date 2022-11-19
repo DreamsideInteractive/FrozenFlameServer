@@ -122,7 +122,7 @@ MonstersDamageMultiplier=1
 
 
 
-#Bulding without material costs
+#Building without material costs
 bNoModuleCost=False
 
 #Building without restrictions
