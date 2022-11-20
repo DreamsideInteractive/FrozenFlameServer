@@ -62,6 +62,8 @@ Use the next example to install the game server on Linux:
 
 `-MetaGameServerName=CoolServer` - Set server name
 
+`-noeac` - Start the game with no EasyAntiCheat (clients also should be started without it)
+
 `RconPassword=password` - Set Rcon password
 
 `RconPort=` - Set Rcon port
