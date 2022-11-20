@@ -1,6 +1,6 @@
-[阅读英文版说明](./README.md)
+[阅读英文版教程](./README.md)
 
-# 冰封之焰 - 游戏专属服务器搭建 V0.2
+# 冰封之焰 - 游戏专属服务器搭建 V0.3
 
 如您需要搭建《冰封之焰》专属服务器，您需要拥有一台拥有静态IP的服务器，以便于玩家连接至您的服务器加入游玩。
 
@@ -21,22 +21,73 @@
 ```
 
 - 推荐操作系统配置：【请等待后续更新】
--  App ID：`1348640`
+- App ID：`1348640`
+- 经过中国 2P Games 团队进行的搭建测试，我们推荐使用内存 4G 以上的服务器进行搭建，否则搭建过程将会由于内存不足以游戏渲染导致虚幻引擎内存报错关闭。
+- 同时对于使用阿里云、腾讯云搭建服务器的玩家们，我们建议你在搭建前检查云服务器安全组规则保证游戏必要的 TCP 与 UDP 协议端口有为所有人（如有需求）打开
 
 ## 在 Windows 系统上搭建游戏专属服务器
 
-> Windows搭建教程内容等待核实中, 2P Games 团队将会在后续对此部分进行更新
+### 依赖文件：
 
-1. 首先，你需要在 Steam 资料库中找到“Frozen Flame - Dedicated server”
-2. 在安装文件夹中找到 `FrozenFlameServer.exe`
-3. 通过命令行模式启动该 exe 文件，并在命令后加入 `-log` （该指令将会为你在命令行上显示游戏控制台信息）
+- 在 Windows 系统上执行游戏文件将会需要使用到的依赖包：
+  - [Direct X](http://www.microsoft.com/en-us/download/confirmation.aspx?id=8109)
+    - 下载完毕后先进行一次解压，解压完毕后点击 exe 文件进行安装
+  - [Visual C++](https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-160)
+    - 在页面上选择对应服务器系统版本的安装包进行安装
+  - [Steam 客户端（没错，你没看错）](https://store.steampowered.com/about/)
+    - 经过测试，目前版本玩家需要安装 Steam 客户端才能完成游戏服务器端的用户信息
+    - 在完成安装操作之后，可以直接将 Steam 客户端直接关闭，不需要进行登录
+
+### 步骤一：下载安装 SteamCMD
+
+1. 首先你需要在服务器上安装 SteamCMD，从服务器上[使用本链接进行 SteamCMD 下载](https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip)
+2. 提取 `SteamCMD.zip` 中的文件到 `C:\steamcmd` 目录下
+3. 打开 Windows PowerShell 执行以下命令，启动 SteamCMD
+
+```
+cd C:\steacmd
+.\steamcmd.exe
+```
+
+### 步骤二：通过 SteamCMD 下载安装游戏
+
+完成步骤二的操作后，执行以下指令
+
+```
+1.    force_install_dir C:\frozen_flame\ // 指定 SteamCMD 文件下载位置
+2.    login anonymous //登陆 Steam 匿名账号，此步骤可能需要等待一段时间完成
+3.    app_update 1348640 validate //通过 Steam CMD 下载《冰封之焰》服务器端
+4.    quit  //退出 Steam CMD
+```
+
+完成上述步骤后，《冰封之焰》服务器端就将安装至你的 Windows 服务器上
+
+### 步骤三：运行游戏
+
+打开 Windows Powershell，执行以下命令启动游戏
+
+```
+cd C:\frozen_flame\
+.\FrozenFlameServer.exe -log
+```
+
+将会弹出新窗口开设服务器房间。
+
+在首次运行了《冰封之焰》服务器端文件的后，游戏将会在服务器创建所需要的相关文件，并在端口 7777 下方创建游戏房间
+
+在我们的测试中有出现以下情况：
+
+- 如成功看到 LogTemp: WorldSaved, 52 entities, 0 ModuleClusters, 则代表房间成功创建。
+- 如看到报错 `Engine crash handling finished; re-raising signal 11 for the default handler. Good bye.`, 则代表游戏创建失败，虚幻引擎执行了游戏关闭步骤
+  - 如报错  `Executing StaticShutdownAfterError` 以及类似 `LargeMemoryPoolOffset`的字样，则代表服务器的内存不足导致的游戏创建失败，您可以通过为服务器增加内存的方法解决。（在我们的测试中成功创建游戏房间的服务器内存为 4G）
+- 如看到报错 `LogSteamShared: Warning: Steam Dedicated Server API failed to initialize`，则代表游戏未能执行 Steam API。（在我们的测试中，通过安装 Steam 客户端帮助了这一命令的执行）
+
 
 ## 在 Linux 系统上搭建游戏专属服务器
 
-### 注意事项：
+### 依赖文件：
 
-- 经过中国 2P Games 团队进行的搭建测试，我们推荐使用内存 4G 以上的服务器进行搭建，否则搭建过程将会由于内存不足以游戏渲染导致虚幻引擎内存报错关闭。
-- 同时对于使用阿里云、腾讯云搭建服务器的玩家们，我们建议你在搭建前检查云服务器安全组规则保证游戏必要的 TCP 与 UDP 协议端口有为所有人（如有需求）打开
+> 2P Games 团队将会在后续对此部分进行更新
 
 ### 步骤一：通过 SteamCMD 下载安装游戏
 
@@ -82,6 +133,8 @@
 - `RconPort=` - 设置 Rcon 接口
 
 ## 配置文件
+
+游戏的配置文件名为 `Game.ini` ， 你可以从[这里](./config/game.ini)下载到默认的 `Game.ini` 文件。对于不同的系统，这一文件需要放置在不同的文件夹下。
 
 ### 配置文件位置：
 
@@ -192,7 +245,13 @@ MinDurability=0.300000
 1. 请确保服务器支持并打开了 `EasyAntiCheat`，并在客户端启动项中选择了带有 EasyAntiCheat 的启动项。您可以通过检查《冰封之焰》服务器端启动时 Log 是否有打出 `LogEOSAnalytics: Start Session (User: ...)` ，判断是否将其打开
 2. 如发现服务器无以上 Log，游戏仍无法正常运行，您可以将服务器端关闭 EasyAntiCheat （如有打开），并在游戏启动时选择不带 EasyAntiCheat 的启动项。
 
+
+### 游戏新手教程之后的门进不去怎么办？
+
+对于 Windows 服务器，在我们的测试中是由于服务器端无法使用 Steam API 而导致的问题。就目前而言，最简单的操作是安装 Steam 客户端。
+
 > EAC 内容等待核实中, 2P Games 团队将会在后续对此部分进行更新
+
 
 ### 游戏存档位置
 
@@ -201,3 +260,9 @@ MinDurability=0.300000
 ```
 Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames
 ```
+
+---
+
+如您在游玩/搭建过程中遇到任何问题，或是想要找到伙伴一起开黑。
+
+欢迎加入 2P Games 官方《冰封之焰》玩家群：398937562
