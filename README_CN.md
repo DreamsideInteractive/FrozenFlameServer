@@ -1,6 +1,6 @@
-[阅读英文版说明](./README.md)
+[阅读英文版教程](./README.md)
 
-# 冰封之焰 - 游戏专属服务器搭建 V0.1
+# 冰封之焰 - 游戏专属服务器搭建 V0.3
 
 如您需要搭建《冰封之焰》专属服务器，您需要拥有一台拥有静态IP的服务器，以便于玩家连接至您的服务器加入游玩。
 
@@ -21,15 +21,75 @@
 ```
 
 - 推荐操作系统配置：【请等待后续更新】
--  App ID：`1348640`
+- App ID：`1348640`
+- 经过中国 2P Games 团队进行的搭建测试，我们推荐使用内存 4G 以上的服务器进行搭建，否则搭建过程将会由于内存不足以游戏渲染导致虚幻引擎内存报错关闭。
+- 同时对于使用阿里云、腾讯云搭建服务器的玩家们，我们建议你在搭建前检查云服务器安全组规则保证游戏必要的 TCP 与 UDP 协议端口有为所有人（如有需求）打开
 
-## 通过 Steam 客户端配置游戏专属服务器（PC）
+## 在 Windows 系统上搭建游戏专属服务器
 
-1. 首先，你需要在 Steam 资料库中找到“Frozen Flame - Dedicated server”
-2. 在安装文件夹中找到 `FrozenFlameServer.exe`
-3. 通过命令行模式启动该 exe 文件，并在命令后加入 `-log` （该指令将会为你在命令行上显示游戏控制台信息）
+### 依赖文件：
+
+- 在 Windows 系统上执行游戏文件将会需要使用到的依赖包：
+  - [Direct X](http://www.microsoft.com/en-us/download/confirmation.aspx?id=8109)
+    - 下载完毕后先进行一次解压，解压完毕后点击 exe 文件进行安装
+  - [Visual C++](https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-160)
+    - 在页面上选择对应服务器系统版本的安装包进行安装
+  - [Steam 客户端（没错，你没看错）](https://store.steampowered.com/about/)
+    - 经过测试，目前版本玩家需要安装 Steam 客户端才能完成游戏服务器端的用户信息
+    - 在完成安装操作之后，可以直接将 Steam 客户端直接关闭，不需要进行登录
+
+### 步骤一：下载安装 SteamCMD
+
+1. 首先你需要在服务器上安装 SteamCMD，从服务器上[使用本链接进行 SteamCMD 下载](https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip)
+2. 提取 `SteamCMD.zip` 中的文件到 `C:\steamcmd` 目录下
+3. 打开 Windows PowerShell 执行以下命令，启动 SteamCMD
+
+```
+cd C:\steacmd
+.\steamcmd.exe
+```
+
+### 步骤二：通过 SteamCMD 下载安装游戏
+
+完成步骤二的操作后，执行以下指令
+
+```
+1.    force_install_dir C:\frozen_flame\ // 指定 SteamCMD 文件下载位置
+2.    login anonymous //登陆 Steam 匿名账号，此步骤可能需要等待一段时间完成
+3.    app_update 1348640 validate //通过 Steam CMD 下载《冰封之焰》服务器端
+4.    quit  //退出 Steam CMD
+```
+
+完成上述步骤后，《冰封之焰》服务器端就将安装至你的 Windows 服务器上
+
+### 步骤三：运行游戏
+
+打开 Windows Powershell，执行以下命令启动游戏
+
+```
+cd C:\frozen_flame\
+.\FrozenFlameServer.exe -log
+```
+
+将会弹出新窗口开设服务器房间。
+
+在首次运行了《冰封之焰》服务器端文件的后，游戏将会在服务器创建所需要的相关文件，并在端口 7777 下方创建游戏房间
+
+在我们的测试中有出现以下情况：
+
+- 如成功看到 LogTemp: WorldSaved, 52 entities, 0 ModuleClusters, 则代表房间成功创建。
+- 如看到报错 `Engine crash handling finished; re-raising signal 11 for the default handler. Good bye.`, 则代表游戏创建失败，虚幻引擎执行了游戏关闭步骤
+  - 如报错  `Executing StaticShutdownAfterError` 以及类似 `LargeMemoryPoolOffset`的字样，则代表服务器的内存不足导致的游戏创建失败，您可以通过为服务器增加内存的方法解决。（在我们的测试中成功创建游戏房间的服务器内存为 4G）
+- 如看到报错 `LogSteamShared: Warning: Steam Dedicated Server API failed to initialize`，则代表游戏未能执行 Steam API。（在我们的测试中，通过安装 Steam 客户端帮助了这一命令的执行）
+
 
 ## 在 Linux 系统上搭建游戏专属服务器
+
+### 依赖文件：
+
+> 2P Games 团队将会在后续对此部分进行更新
+
+### 步骤一：通过 SteamCMD 下载安装游戏
 
 1. 首先您需要在服务器上安装 SteamCMD，具体安装步骤请参考[Steam官方文档](https://developer.valvesoftware.com/wiki/SteamCMD:zh-cn)。具体安装步骤请按照具体的 Linux 发行版本（如Ubuntu、Redhat、CentOS）对应。
 2. 并按照教程打开 SteamCMD ( [Steam官方文档·运行 SteamCMD 一栏](https://developer.valvesoftware.com/wiki/SteamCMD:zh-cn#.E8.BF.90.E8.A1.8C_SteamCMD))
@@ -37,12 +97,34 @@
 
 ```
 1.    force_install_dir ./frozen_flame/ // 指定 SteamCMD 文件下载位置
-2.    login steamaccount //登陆 Steam 账号，可能需要输入密码并需要密保
+2.    login anonymous //登陆 Steam 匿名账号，此步骤可能需要等待一段时间完成
 3.    app_update 1348640 validate //通过 Steam CMD 下载《冰封之焰》服务器端
 4.    quit  //退出 Steam CMD
 ```
 
-## 指令参数
+> 我们推荐您根据 Steam 官方文档创建子账户完成 SteamCMD 的下载安装步骤（而非使用 Root 账号），您可以通过检查命令行“@”号前方的名称判断用户
+> 
+> 为何我们需要使用 SteamCMD 安装游戏：由于游戏客户端与服务器端的游戏需要保持最新版本才能保证游戏的正常运行，因此我们选择使用 Steam 为我们进行游戏的服务器端的更新步骤
+
+### 步骤二：执行游戏服务器端运行脚本
+
+完成上述步骤后，游戏就将安装至我们指定的 /frozen_flame 文件夹下方，随后执行下述步骤：
+
+```
+1. cd frozen_flame/ //进入 frozen_flame 文件夹
+2. ./FrozenFlameServer.sh -log //运行《冰封之焰》服务器端
+
+```
+
+在首次运行了《冰封之焰》服务器端文件的后，游戏将会在服务器创建所需要的相关文件，并在端口 7777 下方创建游戏房间
+
+在我们的测试中有出现以下情况：
+
+- 如成功看到 LogTemp: WorldSaved, 52 entities, 0 ModuleClusters, 则代表房间成功创建。
+- 如看到报错 `Engine crash handling finished; re-raising signal 11 for the default handler. Good bye.`, 则代表游戏创建失败，虚幻引擎执行了游戏关闭步骤
+  - 如报错  `Executing StaticShutdownAfterError` 以及类似 `LargeMemoryPoolOffset`的字样，则代表服务器的内存不足导致的游戏创建失败，您可以通过为服务器增加内存的方法解决。（在我们的测试中成功创建游戏房间的服务器内存为 4G）
+
+## FrozenFlameServer 指令参数
 
 - `-log` - 显示游戏控制台
 - `-LOCALLOGTIMES` - 使用本机系统时间
@@ -52,11 +134,19 @@
 
 ## 配置文件
 
-为配置服务器，你还需要创建 `Game.ini` 文件:
-- 对于 Windows：文件需要放到 `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer`  文件夹下方
-- 对于 Linux：文件需要放到 `Folder\FrozenFlame\Saved\Config\LinuxServer`文件夹下方
+游戏的配置文件名为 `Game.ini` ， 你可以从[这里](./config/game.ini)下载到默认的 `Game.ini` 文件。对于不同的系统，这一文件需要放置在不同的文件夹下。
 
-文件内容如下（在默认设定下）：
+### 配置文件位置：
+
+- 对于 Windows：你可以找到配置文件位于 `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer`  文件夹下方
+- 对于 Linux：你可以找到配置文件位于 `Folder\FrozenFlame\Saved\Config\LinuxServer`文件夹下方
+
+### 你需要了解的部分：
+
+- 配置文件将会在首次执行服务器端启动的时候进行创建
+- 配置文件将会在游戏重启时进行加载，但请保证在游戏完全关闭时进行修改游戏配置文件，并在重新开启游戏服务器前确认是否成功完成了游戏配置文件的修改
+  - 请务必注意游戏文件配置文件的格式
+
 
 ```
 [/Script/Engine.GameSession]
@@ -65,73 +155,73 @@ ServerPassword=""
 
 [/Script/FrozenFlame.GameBalance]
 
-# Enable PVP for non-friends
+# 对非好友开放 PVP
 bFreePVP=True
 
-# How long a day lasts
+# 游戏内一日的时长为
 DurationOfDay=3600
 
 
-# Health after death
+# 死亡复活时的 HP
 HealthAfterRespawn=0.5
 
-# Restore health on level up
+# 等级提升时恢复的 HP
 bRestoreHealthOnLevelUp=True
 
-# Stamina cost at jumping
+# 跳跃时消耗的体力值
 JumpStaminaCost=6
 
-# Stamina cost at sprinting
+# 冲刺时消耗的体力值
 SprintStaminaCost=1
 
-# Loss of armor durability after death
+# 因死亡消耗的装甲耐久度
 ArmorDurabilityReducementAfterDeath=25
 
-# Weapon durability loss speed
+# 武器耐久度消耗速度
 DefaultWeaponDurabilityCost=0.5
 
 
-# Allow to teleport with overweight
+# 是否允许过重状态下进行传送
 bIsAllowedToTeleportWithOverweight=False
 
-# Allow to fly with overweight
+# 是否允许过重状态下飞行
 bIsAllowedToGlideWithOverweight=False
 
 
 # Drop of items after level X
 MinimalLevelToDropItemAfterDeath=2147483647
 
-# Drop equipped items after death
+# 是否在死亡后掉落物品
 bDropEquippedItems=False
 
-# Drop equipable items after death
+# 是否在死亡后掉落装备
 bDropEquipableItems=False
 
-# Drop food on death
+# 是否在死亡后掉落食物
 bDropFoodItems=False
 
 
-#Flame rate from everything
+# Flame rate from everything
 FlameRate=1
 
-#Player damage multiplier
+# 玩家伤害倍率
 PlayerDamageMultiplier=1
 
-#Monsters health multiplier
+# 怪物 HP 倍率
 MonstersHealthMultiplier=1
 
-#Monsters damage multiplier
+# 怪物伤害倍率
 MonstersDamageMultiplier=1
 
 
 
-#Bulding without material costs
+# 是否开启无消耗建造模式
 bNoModuleCost=False
 
-#Building without restrictions
+# 是否开启无限制建造模式
 bLimitlessSupport=False
 
-#Bulding without decay
+# 是否开启建造物无侵蚀模式
 bInvulnerableModules=False
 
 
@@ -156,6 +246,12 @@ MinDurability=0.300000
 2. 如发现服务器无以上 Log，游戏仍无法正常运行，您可以将服务器端关闭 EasyAntiCheat （如有打开），并在游戏启动时选择不带 EasyAntiCheat 的启动项。
 
 
+### 游戏新手教程之后的门进不去怎么办？
+
+对于 Windows 服务器，在我们的测试中是由于服务器端无法使用 Steam API 而导致的问题。就目前而言，最简单的操作是安装 Steam 客户端。
+
+> EAC 内容等待核实中, 2P Games 团队将会在后续对此部分进行更新
+
 
 ### 游戏存档位置
 
@@ -164,3 +260,9 @@ MinDurability=0.300000
 ```
 Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames
 ```
+
+---
+
+如您在游玩/搭建过程中遇到任何问题，或是想要找到伙伴一起开黑。
+
+欢迎加入 2P Games 官方《冰封之焰》玩家群：398937562
