@@ -10,4 +10,4 @@ Then you'll be able to adjust the settings to your liking.
 
 Use it at your own risk and discretion, since some settings might not yet work in the multiplayer.
 
-We strongly recommend to make backups of your Game Saves before applying any changes.
+We strongly recommend to make backups of your `Game Saves` before applying any changes.
