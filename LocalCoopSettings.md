@@ -1,11 +1,11 @@
 # Frozen Flame - Local Coop Game Setting
-While we are working on in-game settings UI -  you can change your Local Coop game settings ini file.
+While we work on the in-game settings UI, you can change your Local Coop game settings .ini file.
 
-To make it work just put the next file:
+To ensure it works, please insert the following file:
 https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Game.ini
 
-To your game profile folder `%USERPROFILE%/AppData/Local/FrozenFlame/Saved/Config/WindowsNoEditor`
+Into your game profile:  `%USERPROFILE%/AppData/Local/FrozenFlame/Saved/Config/WindowsNoEditor`
 
-And then change settings as you like.
+Then you'll be able to adjust the settings to your liking.
 
-Use that on your own risk, since some settings might not work in multiplayer yet.
+Use it at your own risk and discretion, since some settings might not yet work in the multiplayer.
