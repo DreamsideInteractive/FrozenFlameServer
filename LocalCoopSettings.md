@@ -7,3 +7,5 @@ https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Game.ini
 To your game profile `%USERPROFILE%/AppData/Local/FrozenFlame/Saved/Config/WindowsNoEditor`
 
 And then change settings as you like.
+
+Use that on your own risk, since some settings might not work in multiplayer yet.
