@@ -1,4 +1,4 @@
-# Frozen Flame - LocalCoop Game Setting
+# Frozen Flame - Local Coop Game Setting
 While we are working on in-game settings UI -  you can change your Local Coop game settings ini file.
 
 To make it work just put the next file:
