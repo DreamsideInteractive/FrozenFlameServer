@@ -1,6 +1,6 @@
 [阅读英文版教程](./README.md)
 
-# 冰封之焰 - 游戏专属服务器搭建 V0.3
+# 冰封之焰 - 游戏专属服务器搭建 V0.3.5
 
 如您需要搭建《冰封之焰》专属服务器，您需要拥有一台拥有静态IP的服务器，以便于玩家连接至您的服务器加入游玩。
 
@@ -126,9 +126,12 @@ cd C:\frozen_flame\
 
 ## FrozenFlameServer 指令参数
 
-- `-log` - 显示游戏控制台
+- `-log` - 显示运行报告
 - `-LOCALLOGTIMES` - 使用本机系统时间
+- `-port` - 设置服务器连接端口
+- `-ip` - 设置 IP
 - `-MetaGameServerName=CoolServer` - 设置服务器名字为 `CoolServer`
+- `-noeac` - 以无 EasyAntiCheat （EAC，蓝熊）模式启动服务端游戏（该模式下需要客户端游戏也以无 EasyAntiCheat 模式打开游戏）
 - `RconPassword=password` - 设置 Rcon 密码为 `password`
 - `RconPort=` - 设置 Rcon 接口
 
@@ -245,13 +248,14 @@ MinDurability=0.300000
 1. 请确保服务器支持并打开了 `EasyAntiCheat`，并在客户端启动项中选择了带有 EasyAntiCheat 的启动项。您可以通过检查《冰封之焰》服务器端启动时 Log 是否有打出 `LogEOSAnalytics: Start Session (User: ...)` ，判断是否将其打开
 2. 如发现服务器无以上 Log，游戏仍无法正常运行，您可以将服务器端关闭 EasyAntiCheat （如有打开），并在游戏启动时选择不带 EasyAntiCheat 的启动项。
 
+EAC 关闭方法： 在启用游戏时以以下命令启动 
+- Linux 系统下：`./FrozenFlameServer.sh -log -noeac`
+- Windows 系统下：`.\FrozenFlameServer.exe -log -noeac`
+
 
 ### 游戏新手教程之后的门进不去怎么办？
 
 对于 Windows 服务器，在我们的测试中是由于服务器端无法使用 Steam API 而导致的问题。就目前而言，最简单的操作是安装 Steam 客户端。
-
-> EAC 内容等待核实中, 2P Games 团队将会在后续对此部分进行更新
-
 
 ### 游戏存档位置
 
