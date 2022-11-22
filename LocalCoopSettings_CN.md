@@ -1,4 +1,4 @@
-[阅读中文版本](LocalCoopSettings.md)
+[阅读英文版本](LocalCoopSettings.md)
 
 # 《冰封之焰》 - 本地联机模式设定
 
