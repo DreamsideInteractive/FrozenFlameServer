@@ -90,6 +90,8 @@ It should be in the end og server log right after start `LogEOSAnalytics: Start 
 
 If for some reason it doesn't work - players can play on your dedicated server only without EasyAntiCheat (a second option on Steam game start).
 
+Steam might be also required.
+
 ### Where to find the game save files?
 The default location for save files are:
 `Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames`
