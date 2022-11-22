@@ -4,6 +4,11 @@
 
 You will need a static (public) IP address, so people will be able to connect to your server.
 
+#  Installation via Steam
+
+Find `Frozen Flame - Dedicated server` in your Steam library and install it.
+Then click on it and open local files folder.
+
 #  Installation via SteamCMD
 
 You can use [SteamCmd](https://developer.valvesoftware.com/wiki/SteamCMD) tool to download a server.
@@ -14,10 +19,6 @@ Use the next AppID `1348640`
 
 Open a folder of Dedicated server and launch `FrozenFlameServer.exe` with `-log` command line argument. 
 After that a game console will be shown. You can try to add it to your game private servers list with `127.0.0.1` IP by default (for local tests).
-
-It's strongly recommended to download a server view SteamCMD. But if that is not possible you can temporary download Windows Dedicated server version here https://www.dropbox.com/s/2jwgu2qgsnymf28/FrozenFlameServer_0.65.0.5.zip?dl=0
-
-But make sure it will be updated after new game patches (otherwise it will be not possible to connect).
 
 # Installation on Linux
 Use the next example to install the game server on Linux:
