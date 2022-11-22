@@ -1,3 +1,5 @@
+[阅读中文版本](LocalCoopSettings_CN.md)
+
 # Frozen Flame - Local Coop Game Setting
 While we work on the in-game settings UI, you can change your Local Coop game settings .ini file.
 
