@@ -1,6 +1,6 @@
 [阅读英文版教程](./README.md)
 
-# 冰封之焰 - 游戏专属服务器搭建 V0.3.5
+# 冰封之焰 - 游戏专属服务器搭建 V0.3.6
 
 如您需要搭建《冰封之焰》专属服务器，您需要拥有一台拥有静态IP的服务器，以便于玩家连接至您的服务器加入游玩。
 
@@ -137,7 +137,7 @@ cd C:\frozen_flame\
 
 ## 配置文件
 
-游戏的配置文件名为 `Game.ini` ， 你可以从[这里](./config/game.ini)下载到默认的 `Game.ini` 文件。对于不同的系统，这一文件需要放置在不同的文件夹下。
+游戏的配置文件名为 `Game.ini` ， 你可以从[这里](./Game.ini)下载到默认的 `Game.ini` 文件。对于不同的系统，这一文件需要放置在不同的文件夹下。
 
 ### 配置文件位置：
 
@@ -150,90 +150,54 @@ cd C:\frozen_flame\
 - 配置文件将会在游戏重启时进行加载，但请保证在游戏完全关闭时进行修改游戏配置文件，并在重新开启游戏服务器前确认是否成功完成了游戏配置文件的修改
   - 请务必注意游戏文件配置文件的格式
 
+### 配置文档说明：
 
-```
-[/Script/Engine.GameSession]
-MaxPlayers=10
-ServerPassword=""
+**游戏平衡性配置**
 
-[/Script/FrozenFlame.GameBalance]
+|配置文本|中文注释|默认值|
+|---|---|---|
+|bFreePVP|对非好友开放 PVP|True|
+|DurationOfDay|游戏内一日的时长为|3600|
+|HealthAfterRespawn|死亡复活时的 HP|0.5|
+|bRestoreHealthOnLevelUp|等级提升时恢复的 HP|True|
+|JumpStaminaCost|跳跃时消耗的体力值|6|
+|SprintStaminaCost|冲刺时消耗的体力值|1|
+|ArmorDurabilityReducementAfterDeath|因死亡消耗的装甲耐久度|25|
+|DefaultWeaponDurabilityCost|武器耐久度消耗速度|0.5|
+|HalfSlowdownOverweightRatio|过重 - 玩家将在一定负重的情况下无法奔跑(默认：200/100%)|1|
+|FullSlowdownOverweightRatio|过重 - 玩家将在一定负重的情况下无法奔跑、无法获得新物品（默认：300/150%）|1.5|
+|bIsAllowedToTeleportWithOverweight|是否允许过重状态下进行传送|False|
+|bIsAllowedToGlideWithOverweight|是否允许过重状态下飞行|False|
+|MinimalLevelToDropItemAfterDeath|Drop of items after level X|2147483647|
+|bDropEquippedItems|是否在死亡后掉落物品|False|
+|bDropEquipableItems|是否在死亡后掉落装备|False|
+|bDropFoodItems|是否在死亡后掉落食物|False|
+|FlameRate|Flame rate from everything|1|
+|PlayerDamageMultiplier|玩家伤害倍率|1|
+|MonstersHealthMultiplier|怪物 HP 倍率|1|
+|MonstersDamageMultiplier|怪物伤害倍率|1|
+|bNoModuleCost|是否开启无消耗建造模式|False|
+|bLimitlessSupport|是否开启无限制建造模式|False|
+|bInvulnerableModules|是否开启建造物无侵蚀模式|False|
+|bDemolishResourceDropMultiplier|当建筑物摧毁时多少资源将会回收|0.5|
 
-# 对非好友开放 PVP
-bFreePVP=True
+**建筑老化性设置**
 
-# 游戏内一日的时长为
-DurationOfDay=3600
+|配置文本|中文注释|默认值|
+|---|---|---|
+|MinDurability|在极端天气老化下，建筑的最低耐久值|0.3|
 
+**默认基础设定**
 
-# 死亡复活时的 HP
-HealthAfterRespawn=0.5
+|配置文本|中文注释|默认值|
+|---|---|---|
+|bDisableOverweight|是否关闭过重系统|false|
 
-# 等级提升时恢复的 HP
-bRestoreHealthOnLevelUp=True
+**BP_GameBalance_Base.BP_GameBalance_Base_C**
 
-# 跳跃时消耗的体力值
-JumpStaminaCost=6
-
-# 冲刺时消耗的体力值
-SprintStaminaCost=1
-
-# 因死亡消耗的装甲耐久度
-ArmorDurabilityReducementAfterDeath=25
-
-# 武器耐久度消耗速度
-DefaultWeaponDurabilityCost=0.5
-
-
-# 是否允许过重状态下进行传送
-bIsAllowedToTeleportWithOverweight=False
-
-# 是否允许过重状态下飞行
-bIsAllowedToGlideWithOverweight=False
-
-
-# Drop of items after level X
-MinimalLevelToDropItemAfterDeath=2147483647
-
-# 是否在死亡后掉落物品
-bDropEquippedItems=False
-
-# 是否在死亡后掉落装备
-bDropEquipableItems=False
-
-# 是否在死亡后掉落食物
-bDropFoodItems=False
-
-
-# Flame rate from everything
-FlameRate=1
-
-# 玩家伤害倍率
-PlayerDamageMultiplier=1
-
-# 怪物 HP 倍率
-MonstersHealthMultiplier=1
-
-# 怪物伤害倍率
-MonstersDamageMultiplier=1
-
-
-
-# 是否开启无消耗建造模式
-bNoModuleCost=False
-
-# 是否开启无限制建造模式
-bLimitlessSupport=False
-
-# 是否开启建造物无侵蚀模式
-bInvulnerableModules=False
-
-
-[/Script/FrozenFlame.DecaySubsystemSettings]
-#A minimum durability that keeps after weather decay system damage
-MinDurability=0.300000
-```
-
-
+|配置文本|中文注释|默认值|
+|---|---|---|
+|bApplyRestrictionsInsideEnergyBarriers|在能量屏障区域内是否开启飞行与建筑限制|1|
 
 ## RCON
 
