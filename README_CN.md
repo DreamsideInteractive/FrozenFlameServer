@@ -1,6 +1,6 @@
 [阅读英文版教程](./README.md)
 
-# 冰封之焰 - 游戏专属服务器搭建 V0.3.6
+# 冰封之焰 - 游戏专属服务器搭建 V0.3.7
 
 如您需要搭建《冰封之焰》专属服务器，您需要拥有一台拥有静态IP的服务器，以便于玩家连接至您的服务器加入游玩。
 
@@ -172,7 +172,8 @@ cd C:\frozen_flame\
 |bDropEquippedItems|是否在死亡后掉落物品|False|
 |bDropEquipableItems|是否在死亡后掉落装备|False|
 |bDropFoodItems|是否在死亡后掉落食物|False|
-|FlameRate|Flame rate from everything|1|
+|~~FlameRate~~|~~Flame rate from everything~~|~~1~~|
+|LevelUpFlameRate|升级所需要经验值的倍率(实验项目，开发组本地测试中运行良好)|1|
 |PlayerDamageMultiplier|玩家伤害倍率|1|
 |MonstersHealthMultiplier|怪物 HP 倍率|1|
 |MonstersDamageMultiplier|怪物伤害倍率|1|
@@ -228,6 +229,11 @@ EAC 关闭方法： 在启用游戏时以以下命令启动
 ```
 Frozen Flame - Dedicated Server\FrozenFlame\Saved\SaveGames
 ```
+
+
+### 本地联机模式设定
+
+[请阅读目前版本的本地联机文档](LocalCoopSettings_CN.md)
 
 ---
 
