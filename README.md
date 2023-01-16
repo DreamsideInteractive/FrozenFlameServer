@@ -38,6 +38,9 @@ Use the next example to install the game server on Linux:
 # Installation on Docker
 https://github.com/ragingdave/frozen-flame-docker
 
+# Installation on Helm/Kubernetes or Docker
+https://gitlab.com/japtain_cack/frozenflame-server
+
 # Example Install and launch files
 
 ### Install/Update - Create a .bat  or .sh file with the following contents to install the dedicated server. 
