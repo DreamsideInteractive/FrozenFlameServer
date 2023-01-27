@@ -49,7 +49,7 @@ https://github.com/ragingdave/frozen-flame-docker
 ### Launcher -Create a .bat  or .sh file with the following contents to launch you server. 
 
 `
-"path\to\FrozenFlameServer.exe" -log -LOCALLOGTIMES -MetaGameServerName="YOURSERVERNAME" -ip=xxx.xxx.xxx.xxx -Port=YOURPORT -queryPort=YOURPORT -RconPort=YOURPORT -RconPassword=YOURPASSWORD 
+"path\to\FrozenFlameServer.exe" -log -LOCALLOGTIMES -MetaGameServerName="YOURSERVERNAME" -ip=xxx.xxx.xxx.xxx -Port=7777 -queryPort=25575 -RconPort=27015 -RconPassword=YOURPASSWORD 
 `
 
 # Command line arguments
@@ -102,9 +102,14 @@ The default location for save files are:
 ### Which ports might be required?
 Default ports list:
 ```
+# Query Ports
 25575
 27015/udp
+
+# RCON Ports
 27015
+
+# Server Ports
 7777/udp
 7777
 ```
