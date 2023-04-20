@@ -87,10 +87,13 @@ Here is an example of `Game.ini` server config file https://github.com/Dreamside
 # RCON
 
 In order to access Rcon you can utilize any interface of your choice (e.g. mcrcon : https://github.com/Tiiffi/mcrcon ).
+
 Use the server's IP, Rcon Port and Rcon Password to connect to the server. Upon successful connection you can proceed to use server commands.
+
 NOTE: Make sure to enter the password in the "admin:< Rcon Password >" format.
 
 You can find the existing server commands here:
+
 https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/RCON.commands
 
 # F.A.Q.
