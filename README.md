@@ -75,6 +75,18 @@ https://gitlab.com/japtain_cack/frozenflame-server
 
 `RconPort=` - Set Rcon port
 
+# RCON
+
+In order to access Rcon you can utilize any interface of your choice (e.g. mcrcon : https://github.com/Tiiffi/mcrcon ).
+
+Use the server's IP, Rcon Port and Rcon Password to connect to the server. Upon successful connection you can proceed to use server commands.
+
+NOTE: Make sure to enter the password in the "admin:< Rcon Password >" format.
+
+You can find the existing server commands here:
+
+https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/RCON.commands
+
 # Configuration file
 Create a `Game.ini` file at:
 
@@ -91,19 +103,6 @@ Campaign mode - [HeavenNormal.ini](https://github.com/DreamsideInteractive/Froze
 Cataclysm mode - [GameModeSurvive.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/GameModeSurvive.ini)
 
 Use the [Engine.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Engine.ini) to change the game mode or make a server visible in public servers list.
-
-
-# RCON
-
-In order to access Rcon you can utilize any interface of your choice (e.g. mcrcon : https://github.com/Tiiffi/mcrcon ).
-
-Use the server's IP, Rcon Port and Rcon Password to connect to the server. Upon successful connection you can proceed to use server commands.
-
-NOTE: Make sure to enter the password in the "admin:< Rcon Password >" format.
-
-You can find the existing server commands here:
-
-https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/RCON.commands
 
 # F.A.Q.
 
