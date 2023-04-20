@@ -84,6 +84,10 @@ For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` f
 
 Here is an example of `Game.ini` server config file https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Game.ini
 
+Some settings requires additional .ini files (just copy-past required settings from Game.ini):
+Campaign mode - HeavenNormal.ini
+Cataclysm mode - GameModeSurvive.ini
+
 # RCON
 
 In order to access Rcon you can utilize any interface of your choice (e.g. mcrcon : https://github.com/Tiiffi/mcrcon ).
