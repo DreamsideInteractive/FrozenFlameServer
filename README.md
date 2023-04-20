@@ -87,7 +87,7 @@ You can find the existing server commands here:
 
 https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/RCON.commands
 
-# Configuration file
+# Configuration files
 Create a `Game.ini` file at:
 
 For Windows: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServer` folder.
