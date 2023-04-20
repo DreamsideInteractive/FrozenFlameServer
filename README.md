@@ -82,7 +82,7 @@ For Windows: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\WindowsServe
 
 For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` folder.
 
-Here is an example of `Game.ini` server config file https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Game.ini
+Here is an example of [Game.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Game.ini) server config file.
 
 Each game mode has some default settings which can be changed only in game mode configs (just add them to the same folder)
 
@@ -90,9 +90,8 @@ Campaign mode - [HeavenNormal.ini](https://github.com/DreamsideInteractive/Froze
 
 Cataclysm mode - [GameModeSurvive.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/GameModeSurvive.ini)
 
-Use the next config to change map of make a server visible in public servers list
+Use the [Engine.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Engine.ini) to change the game mode or make a server visible in public servers list.
 
-https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Engine.ini
 
 # RCON
 
