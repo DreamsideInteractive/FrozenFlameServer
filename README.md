@@ -88,6 +88,9 @@ Some settings requires additional .ini files (just copy-past required settings f
 Campaign mode - HeavenNormal.ini
 Cataclysm mode - GameModeSurvive.ini
 
+Use the next config to change map of make a server visible in public servers list
+https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Engine.ini
+
 # RCON
 
 In order to access Rcon you can utilize any interface of your choice (e.g. mcrcon : https://github.com/Tiiffi/mcrcon ).
