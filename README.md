@@ -84,9 +84,9 @@ For Linux: `Your Dedicated Server Folder\FrozenFlame\Saved\Config\LinuxServer` f
 
 Here is an example of `Game.ini` server config file https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Game.ini
 
-Some settings requires additional .ini files (just copy-past required settings from Game.ini):
-Campaign mode - HeavenNormal.ini
-Cataclysm mode - GameModeSurvive.ini
+Each game mode has some default settings which can be changed only in game mode configs (just add them to the same folder)
+Campaign mode - [HeavenNormal.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/GameModeSurvive.ini)
+Cataclysm mode - [GameModeSurvive.ini](https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/GameModeSurvive.ini)
 
 Use the next config to change map of make a server visible in public servers list
 https://github.com/DreamsideInteractive/FrozenFlameServer/blob/main/Engine.ini
